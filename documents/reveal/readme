@@ -1,0 +1,23 @@
+# Reveal 使用
+
+Use MobileLoader to Insert RevealServel
+
+1. rename `RevealServe` to `libReveal.dylib`
+2. create libReveal.plist file `touch libReveal.plist`
+3. put the BundleId of the TargetApp in the file(How to get the TargetApp BundleId???)
+```
+{
+  Filter = {
+    Bundles = (
+          "com.apple.AppStore"
+        )
+  }
+}
+```
+4. copy `libReveal.dylib` and `libReveal.plist` to `/Library/MobileSubstrate/DynamicLibraries/`
+```
+scp -P 2222 libReveal.dylib root@localhost:/Library/MobileSubstrate/DynamicLibraries/
+scp -P 2222 libReveal.plist root@localhost:/Library/MobileSubstrate/DynamicLibraries/
+```
+5. then restart the TargetApp and refresh the `Reveal` app
+

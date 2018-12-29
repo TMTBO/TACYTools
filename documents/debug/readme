@@ -1,0 +1,11 @@
+copy 'debugserver' file to iphone '/usr/bin/debugserver'
+
+cmds:
+
+1. `scp -P 2222 ./debugserver root@localhost:/usr/bin/debugserver`
+2. `debugserver *:1234 -a (pid | process name)`
+3. open a termanl in your mac 
+4. enter cmd `lldb`
+5. user `iproxy`: `iproxy 1234 1234`
+6. then `process connect connect://localhost:1234`
+7. if success the application will be stopped, enter `c` to continue
